@@ -26,6 +26,7 @@ body {
     align-items: center;
     z-index: 100;
     overflow: hidden;
+    
 }
 
 .logo {
@@ -35,8 +36,9 @@ body {
     text-decoration: none;
     font-weight: 600;
     cursor: default;
-    letter-spacing: 5px;
+    letter-spacing: 0px;
     opacity: 0;
+    font-family: Moirai One;
     animation: slideRight 1s ease forwards;
 }
 
@@ -353,15 +355,15 @@ body {
 }
 
 .progress-line.html span {
-    width: 90%;
-}
-
-.progress-line.css span {
     width: 80%;
 }
 
-.progress-line.python span {
+.progress-line.css span {
     width: 75%;
+}
+
+.progress-line.python span {
+    width: 70%;
 }
 
 .progress-line.java span {
@@ -386,15 +388,15 @@ body {
 }
 
 .progress-line.html span::after {
-    content: "90%";
-}
-
-.progress-line.css span::after {
     content: "80%";
 }
 
-.progress-line.python span::after {
+.progress-line.css span::after {
     content: "75%";
+}
+
+.progress-line.python span::after {
+    content: "70%";
 }
 
 .progress-line.java span::after {
