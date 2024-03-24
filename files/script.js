@@ -8,6 +8,15 @@ var typed = new Typed(".text", {
 });
 
 
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 const toTop = document.querySelector(".top");
 window.addEventListener("scroll",() =>{
     if (window.pageYOffset > 100){
@@ -18,12 +27,3 @@ window.addEventListener("scroll",() =>{
     }
 })
 
-
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
