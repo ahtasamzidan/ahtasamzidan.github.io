@@ -55,6 +55,7 @@ body {
   text-decoration: none;
   font-size: 17px;
   display: block;
+    oneclick: hideden;
 }
 
 /* Style the hamburger menu */
@@ -63,6 +64,7 @@ body {
   position: absolute;
   right: 0;
   top: 0;
+    oneclick: hidden;
 }
 
 /* Add a grey background color on mouse-over */
