@@ -16,6 +16,13 @@ function myFunction() {
     x.style.display = "block";
   }
 }
+$(document).ready(function () {
+    // When the user clicks on a link in the navbar on smaller screens the navbar 
+       collapse.
+    $('.topnav a').click(function(){
+            $(".topnav-collapse").collapse('hide');
+        });
+});
 
 const toTop = document.querySelector(".top");
 window.addEventListener("scroll",() =>{
