@@ -17,8 +17,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 20px 100%;
     display: flex;
     align-items: center;
     z-index: 100;
@@ -56,7 +57,7 @@ body {
   text-decoration: none;
   font-size: 17px;
   display: block;
-    oneclick: hideden;
+    oneclick: hidden;
 }
 
 /* Style the hamburger menu */
