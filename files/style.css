@@ -18,7 +18,7 @@ body {
     top: 0;
     left: 0;
     width: 80%;
-    padding: 20px 100%;
+    padding: 20px 10%;
     display: flex;
     align-items: center;
     z-index: 100;
@@ -57,7 +57,7 @@ body {
   text-decoration: none;
   font-size: 17px;
   display: block;
-    oneclick: hidden;
+    one-click: hidden;
 }
 
 /* Style the hamburger menu */
@@ -66,7 +66,7 @@ body {
   position: absolute;
   right: 0;
   top: 0;
-    oneclick: hidden;
+    one-click: hidden;
 }
 
 /* Add a grey background color on mouse-over */
