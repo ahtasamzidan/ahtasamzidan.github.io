@@ -27,7 +27,7 @@ body {
 .logo {
     position: relative;
     left: 0%;
-    width: 80%;
+    width: 50%;
     font-size: 25px;
     color: #fff;
     text-decoration: none;
@@ -42,8 +42,8 @@ body {
 .topnav {
   overflow: hidden;
     right: 0%;
-    width: 20%;
-  background-color: #333;
+    width: 50%;
+  background-color: #fff;
   position: relative;
 }
 
