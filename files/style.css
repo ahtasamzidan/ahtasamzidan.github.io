@@ -929,6 +929,7 @@ body {
 
 @media (max-width: 900px) and (min-width: 700px) {
     .header{
+        padding: 1.25rem 4%;
         display:block;
     }
     .logo {
