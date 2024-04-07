@@ -59,26 +59,12 @@ body {
     font-family: Moirai One;
     animation: slideRight 1s ease forwards;
 }
-
-.topnav {
-  overflow: hidden;
-    right: 0%;
-    width: 50%;
-  background-color: #fff;
-  position: relative;
-}
-
-/* Hide the links inside the navigation menu (except for logo/home) */
-.topnav #myLinks {
-  display: none;
-}
-
 .navbar a {
   color: white;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
-    margin-left: 35px;
+  margin-left: 35px;
   display: block;
 }
 .navbar a:hover {
