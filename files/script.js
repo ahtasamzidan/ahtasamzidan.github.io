@@ -16,13 +16,6 @@ function myFunction() {
     x.style.display = "block";
   }
 }
-$(document).ready(function () {
-    // When the user clicks on a link in the navbar on smaller screens the navbar 
-       collapse.
-    $('.topnav a').click(function(){
-            $(".topnav-collapse").collapse('hide');
-        });
-});
 
 const toTop = document.querySelector(".top");
 window.addEventListener("scroll",() =>{
@@ -33,4 +26,11 @@ window.addEventListener("scroll",() =>{
         toTop.classList.remove("active");
     }
 })
-
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+const navbg = document.querySelector('.nav-bg');
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+    navbg.classList.toggle('active');
+});
