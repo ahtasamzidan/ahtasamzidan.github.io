@@ -11,8 +11,6 @@ body {
     color: white;
     background-color: black;
 }
-
-/* Style the navigation menu */
 .header {
     position: fixed;
     top: 0;
@@ -76,7 +74,6 @@ body {
   display: none;
 }
 
-/* Style the active link (or home/logo) */
 .active {
   background-color: #04AA6D;
   color: red;
