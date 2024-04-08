@@ -48,7 +48,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     cursor: default;
-    font-family: Moirai One;
+    font-family: Madimi One;
     animation: slideRight 1s ease forwards;
 }
 .navbar a {
@@ -1092,25 +1092,29 @@ body {
     }
     
 }
-@media (max-width: 400px) {
+@media (max-width: 400px) 
+*{
+        overflow-x: hidden;
+    }
+{
 #menu-icon {
     display: block;
   }
 
-    .header{
+.header{
         display:block;
     }
-    .logo {
+.logo {
         position: relative;
         font-size: 15px;
         font-weight: 500;
         text-align: center;
     }
-    .logo::after{
+.logo::after{
         content: "\a";
         white-space: pre;
     }
-    .navbar {
+.navbar {
     position: absolute;
     top: 100%;
     left: 0;
