@@ -6,6 +6,14 @@ var typed = new Typed(".text", {
     loop:true
 });
 
+const menuIcon = document.querySelector('#menu-icon');
+const navbar = document.querySelector('.navbar');
+const navbg = document.querySelector('.nav-bg');
+menuIcon.addEventListener('click', () => {
+menuIcon.classList.toggle('bx-x');
+navbar.classList.toggle('active');
+navbg.classList.toggle('active');
+});
 
 function myFunction() {
   var x = document.getElementById("myLinks");
@@ -25,12 +33,3 @@ window.addEventListener("scroll",() =>{
         toTop.classList.remove("active");
     }
 })
-
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('.navbar');
-const navbg = document.querySelector('.nav-bg');
-menuIcon.addEventListener('click', () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-    navbg.classList.toggle('active');
-});
