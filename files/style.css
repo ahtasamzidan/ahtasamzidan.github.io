@@ -55,6 +55,7 @@ body {
   color: white;
   text-decoration: none;
   font-size: 17px;
+ margin-left: 50px;
 }
 
 .navbar a:hover {
@@ -64,7 +65,7 @@ body {
 #menu-icon {
   font-size: 36px;
   color: #fff;
-    animation: slideRight 1s ease forwards;
+  animation: slideleft 1s ease forwards;
   display: none;
 }
 
