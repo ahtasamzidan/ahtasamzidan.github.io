@@ -1286,7 +1286,7 @@ body {
     /*contact*/
     .contacts h2{
         font-size: 50px;
-         position: center;
+        position: center;
     }
     .contact-list i{
         font-size: 13px;
@@ -1309,3 +1309,4 @@ body {
         color: #000;
     }
 }
+
