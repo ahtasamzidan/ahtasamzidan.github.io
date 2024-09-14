@@ -553,7 +553,7 @@ body {
 
 .row img {
     width: 100%;
-    max-width: 300px;
+    max-width: 1350px;
     max-height: 300px;
     border-radius: 15px;
     display: block;
@@ -563,7 +563,7 @@ body {
 
 .layer {
     width: 100%;
-    max-width: 300px;
+    max-width: 1350px;
     max-height: 300px;
     height: 0;
     opacity: 0;
