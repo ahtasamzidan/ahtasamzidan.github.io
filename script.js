@@ -96,26 +96,6 @@ function scrollActive() {
         }
     });
 
-// contact form
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var form = this;
-
-            fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById("successMessage").style.display = "block";
-                    form.reset();
-                } else {
-                    alert("Something went wrong. Please try again.");
-                }
-            }).catch(error => {
-                alert("There was an error submitting the form.");
-            });
-        });
 }
 
 window.addEventListener('scroll', scrollActive);
