@@ -581,7 +581,46 @@
             </div>
         </div>
     </section>
+<!-- Live Chat Widget -->
+<div class="chat-widget">
+  <!-- Floating Button -->
+  <div class="chat-toggle">
+    💬
+  </div>
 
+  <!-- Chat Box -->
+  <div class="chat-box">
+    <div class="chat-header">
+      <img src="assets/images/profile.jpg" alt="Ahtasam Zidan">
+      <div class="chat-title">
+        <h4>
+          Ahtasam Zidan 
+          <span class="verified-badge"></span>
+        </h4>
+        <p>Web & Visual Strategist</p>
+      </div>
+      <span class="close-btn">&times;</span>
+    </div>
+
+    <div class="chat-body">
+      <p>👋 Need help? I’m here to chat with you!</p>
+
+      <!-- Suggested Messages -->
+      <div class="suggestions">
+        <button data-msg="Are you available?">Are you available?</button>
+        <button data-msg="Can we discuss a project?">Can we discuss a project?</button>
+        <button data-msg="What services do you provide?">What services do you provide?</button>
+      </div>
+
+      <!-- Input Field -->
+      <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button id="sendMessage">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
     <!-- Footer -->
     <footer id="footer">
         <div class="container">
@@ -609,79 +648,40 @@
     <script src="assets/js/owl.carousel.min.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
-
-    <!-- Messenger Chat Widget -->
-<div class="chat-widget">
-  <!-- Floating Button -->
-  <div class="chat-toggle">
-    <i class="bi bi-messenger"></i>
-  </div>
-
-  <!-- Chat Box -->
-  <div class="chat-box">
-    <div class="chat-header">
-      <img src="assets/images/portrait.png" alt="Ahtasam Zidan">
-      <div class="chat-title">
-        <h4>
-          Ahtasam Zidan 
-          <span class="verified-badge">✔</span>
-        </h4>
-        <p>Web & Visual Strategist</p>
-      </div>
-      <span class="close-btn">&times;</span>
-    </div>
-    <div class="chat-body">
-      <p>👋 Hi there! Send me a message by Live Chat</p>
-
-      <!-- Suggested Messages -->
-      <div class="suggestions">
-        <button data-msg="Are you available?">Are you available?</button>
-        <button data-msg="Can we discuss a project?">Can we discuss a project?</button>
-        <button data-msg="What services do you provide?">What services do you provide?</button>
-      </div>
-
-      <!-- Input Field -->
-      <div class="chat-input">
-        <input type="text" id="userMessage" placeholder="Type your message...">
-        <button id="sendMessage">Send</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- JavaScript live chat -->
+    <!-- JavaScriptfor live chat -->
 <script>
   const toggle = document.querySelector('.chat-toggle');
   const chatBox = document.querySelector('.chat-box');
   const closeBtn = document.querySelector('.chat-header .close-btn');
-  const sendBtn = document.getElementById('sendMessage');
-  const userMsgInput = document.getElementById('userMessage');
-  const suggestionBtns = document.querySelectorAll('.suggestions button');
+  const suggestions = document.querySelectorAll('.suggestions button');
+  const userMessage = document.getElementById('userMessage');
+  const sendMessage = document.getElementById('sendMessage');
 
+  // Toggle Chat
   toggle.addEventListener('click', () => {
     chatBox.classList.toggle('active');
   });
 
+  // Close Chat
   closeBtn.addEventListener('click', () => {
     chatBox.classList.remove('active');
   });
 
-  // Send button click
-  sendBtn.addEventListener('click', () => {
-    let msg = userMsgInput.value.trim();
-    if (msg) {
-      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(msg)}`, "_blank");
-      userMsgInput.value = "";
-    }
-  });
-
-  // Suggestion button click
-  suggestionBtns.forEach(btn => {
+  // Suggestions
+  suggestions.forEach(btn => {
     btn.addEventListener('click', () => {
-      let msg = btn.getAttribute("data-msg");
-      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(msg)}`, "_blank");
+      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(btn.dataset.msg)}`, '_blank');
     });
   });
-</script>
+
+  // Send Message
+  sendMessage.addEventListener('click', () => {
+    if (userMessage.value.trim() !== "") {
+      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(userMessage.value)}`, '_blank');
+      userMessage.value = "";
+    }
+  });
+</script> 
 
 </body>
 </html>
