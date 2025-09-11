@@ -549,7 +549,7 @@
             <div class="row justify-content-center" data-aos="fade-down" data-aos-delay="500">
                 <div class="col-lg-8">
                     <div class="contact-form">
-                        <form action="https://formspree.io/f/xldjelqg" method="POST">
+                        <form action="https://formspree.io/f/xzzerzez" method="POST">
                             <div class="row g-2">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -610,48 +610,6 @@
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
 
-    <!-- JavaScript lie chat -->
-<script>
-  const toggle = document.querySelector('.chat-toggle');
-  const chatBox = document.querySelector('.chat-box');
-  const closeBtn = document.querySelector('.chat-header .close-btn');
-  const suggestions = document.querySelectorAll('.suggestions button');
-  const userMessage = document.getElementById('userMessage');
-  const sendMessage = document.getElementById('sendMessage');
-  const greeting = document.querySelector('.chat-greeting');
-
-  // Toggle Chat
-  toggle.addEventListener('click', () => {
-    chatBox.classList.toggle('active');
-    greeting.classList.remove('active'); // hide greeting when chat opens
-  });
-
-  // Close Chat
-  closeBtn.addEventListener('click', () => {
-    chatBox.classList.remove('active');
-  });
-
-  // Suggestions
-  suggestions.forEach(btn => {
-    btn.addEventListener('click', () => {
-      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(btn.dataset.msg)}`, '_blank');
-    });
-  });
-
-  // Send Message
-  sendMessage.addEventListener('click', () => {
-    if (userMessage.value.trim() !== "") {
-      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(userMessage.value)}`, '_blank');
-      userMessage.value = "";
-    }
-  });
-
-  // Auto show greeting popup after 3s
-  setTimeout(() => {
-    greeting.classList.add('active');
-  }, 3000);
-</script>
-
     <!-- Live Chat Widget -->
 <div class="chat-widget">
   <!-- Floating Button -->
@@ -698,5 +656,46 @@
     </div>
   </div>
 </div>
+     <!-- JavaScript lie chat -->
+<script>
+  const toggle = document.querySelector('.chat-toggle');
+  const chatBox = document.querySelector('.chat-box');
+  const closeBtn = document.querySelector('.chat-header .close-btn');
+  const suggestions = document.querySelectorAll('.suggestions button');
+  const userMessage = document.getElementById('userMessage');
+  const sendMessage = document.getElementById('sendMessage');
+  const greeting = document.querySelector('.chat-greeting');
+
+  // Toggle Chat
+  toggle.addEventListener('click', () => {
+    chatBox.classList.toggle('active');
+    greeting.classList.remove('active'); // hide greeting when chat opens
+  });
+
+  // Close Chat
+  closeBtn.addEventListener('click', () => {
+    chatBox.classList.remove('active');
+  });
+
+  // Suggestions
+  suggestions.forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(btn.dataset.msg)}`, '_blank');
+    });
+  });
+
+  // Send Message
+  sendMessage.addEventListener('click', () => {
+    if (userMessage.value.trim() !== "") {
+      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(userMessage.value)}`, '_blank');
+      userMessage.value = "";
+    }
+  });
+
+  // Auto show greeting popup after 3s
+  setTimeout(() => {
+    greeting.classList.add('active');
+  }, 3000);
+</script>
 </body>
 </html>
