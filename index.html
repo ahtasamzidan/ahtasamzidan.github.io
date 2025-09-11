@@ -648,7 +648,40 @@
     </div>
   </div>
 </div>
+<!-- JavaScript live chat -->
+<script>
+  const toggle = document.querySelector('.chat-toggle');
+  const chatBox = document.querySelector('.chat-box');
+  const closeBtn = document.querySelector('.chat-header .close-btn');
+  const sendBtn = document.getElementById('sendMessage');
+  const userMsgInput = document.getElementById('userMessage');
+  const suggestionBtns = document.querySelectorAll('.suggestions button');
 
+  toggle.addEventListener('click', () => {
+    chatBox.classList.toggle('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    chatBox.classList.remove('active');
+  });
+
+  // Send button click
+  sendBtn.addEventListener('click', () => {
+    let msg = userMsgInput.value.trim();
+    if (msg) {
+      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(msg)}`, "_blank");
+      userMsgInput.value = "";
+    }
+  });
+
+  // Suggestion button click
+  suggestionBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      let msg = btn.getAttribute("data-msg");
+      window.open(`https://m.me/ahtasamzidan?ref=${encodeURIComponent(msg)}`, "_blank");
+    });
+  });
+</script>
 
 </body>
 </html>
