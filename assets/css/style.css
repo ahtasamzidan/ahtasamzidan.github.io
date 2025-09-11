@@ -1062,7 +1062,6 @@ a:hover{
 .chat-toggle {
   background: linear-gradient(135deg, #006AFF, #00C6FF);
   color: #fff;
-  font-size: 28px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1074,8 +1073,33 @@ a:hover{
   transition: all 0.3s ease;
 }
 .chat-toggle:hover {
-  transform: scale(1.1) rotate(10deg);
+  transform: scale(1.1);
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+.chat-toggle svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Greeting Popup */
+.chat-greeting {
+  position: absolute;
+  bottom: 90px;
+  right: 80px;
+  background: #fff;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+.chat-greeting.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Chat Box */
@@ -1094,8 +1118,6 @@ a:hover{
   transition: all 0.3s ease;
   pointer-events: none;
 }
-
-/* Chat Box Active */
 .chat-box.active {
   opacity: 1;
   transform: scale(1);
@@ -1133,13 +1155,13 @@ a:hover{
   cursor: pointer;
 }
 
-/* Facebook-style Verified Badge */
 /* Verified Badge */
 .verified-icon {
   width: 18px;
   height: 18px;
   margin-left: 6px;
 }
+
 /* Chat Body */
 .chat-body {
   padding: 15px;
