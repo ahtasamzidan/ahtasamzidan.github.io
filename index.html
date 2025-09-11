@@ -59,6 +59,54 @@
 
 <body data-bs-theme="dark" data-bs-spy="scroll" data-bs-target="#navbar">
 
+    <!-- Live Chat Widget -->
+<div class="chat-widget">
+  <!-- Floating Button -->
+  <div class="chat-toggle">
+    <!-- Premium Chat Icon (SVG) -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28">
+      <path d="M12 3C6.48 3 2 6.92 2 12c0 2.21.89 4.21 2.36 5.77L2 22l4.41-2.34C7.71 20.55 9.79 21 12 21c5.52 0 10-3.92 10-9s-4.48-9-10-9z"/>
+    </svg>
+  </div>
+
+  <!-- Auto Greeting Popup -->
+  <div class="chat-greeting">💬 Hire me, Click here to chat!</div>
+
+  <!-- Chat Box -->
+  <div class="chat-box">
+    <div class="chat-header">
+      <img src="assets/images/portrait.png" alt="Ahtasam Zidan">
+      <div class="chat-title">
+        <h4>
+          Ahtasam Zidan
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Facebook_Verified_Badge.svg" 
+               alt="Verified" class="verified-icon">
+        </h4>
+        <p>Web & Visual Strategist</p>
+      </div>
+      <span class="close-btn">&times;</span>
+    </div>
+
+    <div class="chat-body">
+      <p>👋 Hi there! — send me a message.</p>
+
+      <!-- Suggested Messages -->
+      <div class="suggestions">
+        <button data-msg="Are you available?">Are you available?</button>
+        <button data-msg="Can we discuss a project?">Can we discuss a project?</button>
+        <button data-msg="What services do you provide?">What services do you provide?</button>
+      </div>
+
+      <!-- Input Field -->
+      <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button id="sendMessage">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <!-- Preloader -->
     <div id="preloader"></div>
     
@@ -581,45 +629,6 @@
             </div>
         </div>
     </section>
-<!-- Live Chat Widget -->
-<div class="chat-widget">
-  <!-- Floating Button -->
-  <div class="chat-toggle">
-    💬
-  </div>
-
-  <!-- Chat Box -->
-  <div class="chat-box">
-    <div class="chat-header">
-      <img src="assets/images/profile.jpg" alt="Ahtasam Zidan">
-      <div class="chat-title">
-        <h4>
-          Ahtasam Zidan 
-          <span class="verified-badge"></span>
-        </h4>
-        <p>Web & Visual Strategist</p>
-      </div>
-      <span class="close-btn">&times;</span>
-    </div>
-
-    <div class="chat-body">
-      <p>👋 Need help? I’m here to chat with you!</p>
-
-      <!-- Suggested Messages -->
-      <div class="suggestions">
-        <button data-msg="Are you available?">Are you available?</button>
-        <button data-msg="Can we discuss a project?">Can we discuss a project?</button>
-        <button data-msg="What services do you provide?">What services do you provide?</button>
-      </div>
-
-      <!-- Input Field -->
-      <div class="chat-input">
-        <input type="text" id="userMessage" placeholder="Type your message...">
-        <button id="sendMessage">Send</button>
-      </div>
-    </div>
-  </div>
-</div>
     
     <!-- Footer -->
     <footer id="footer">
@@ -648,7 +657,8 @@
     <script src="assets/js/owl.carousel.min.js" defer></script>
     <script src="assets/js/bootstrap.min.js" defer></script>
     <script src="assets/js/script.js" defer></script>
-    <!-- JavaScriptfor live chat -->
+
+    <!-- JavaScript lie chat -->
 <script>
   const toggle = document.querySelector('.chat-toggle');
   const chatBox = document.querySelector('.chat-box');
@@ -656,10 +666,12 @@
   const suggestions = document.querySelectorAll('.suggestions button');
   const userMessage = document.getElementById('userMessage');
   const sendMessage = document.getElementById('sendMessage');
+  const greeting = document.querySelector('.chat-greeting');
 
   // Toggle Chat
   toggle.addEventListener('click', () => {
     chatBox.classList.toggle('active');
+    greeting.classList.remove('active'); // hide greeting when chat opens
   });
 
   // Close Chat
@@ -681,7 +693,11 @@
       userMessage.value = "";
     }
   });
-</script> 
 
+  // Auto show greeting popup after 3s
+  setTimeout(() => {
+    greeting.classList.add('active');
+  }, 3000);
+</script>
 </body>
 </html>
