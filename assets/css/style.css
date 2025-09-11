@@ -1134,26 +1134,12 @@ a:hover{
 }
 
 /* Facebook-style Verified Badge */
-.verified-badge {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
+/* Verified Badge */
+.verified-icon {
+  width: 18px;
+  height: 18px;
   margin-left: 6px;
-  background: #1877f2; /* Facebook blue */
-  border-radius: 50%;
-  position: relative;
 }
-.verified-badge::after {
-  content: "✔";
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 /* Chat Body */
 .chat-body {
   padding: 15px;
