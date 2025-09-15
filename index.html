@@ -619,7 +619,11 @@ Hey there, I'm Ahtasam Zidan, a passionate web developer, digital marketer, and 
   <!-- Chat Popup -->
   <div class="chat-popup" id="chat-popup">
     <div class="chat-header">
-      <span>Zidan AI Assistant <i class="fas fa-robot"></i></span>
+      <span>
+  Zidan AI Assistant 
+  <img src="https://img.icons8.com/ios-filled/50/000000/robot.png" alt="Zidan AI" class="chat-logo" style="width:32px; height:32px;">
+</span>
+
       <div id="typing-header" class="typing-dot-header" style="display:none;">
         <span></span><span></span><span></span>
       </div>
@@ -736,11 +740,11 @@ const knowledgeBase = {
   "hobbies": "🎨 Hobbies: Graphic design, tech blogging, exploring AI tools, digital marketing experiments, photography.",
   "languages": "🌐 Languages: English, Bangla, Malay (basic conversational).",
   "availability": "⏰ Availability: Open for freelance web development, digital marketing, and client projects.",
-  "live chat": `📞 Reach Zidan:<br>
-     <a href='https://wa.me/8801741077216' target='_blank'>💬 WhatsApp</a> | 
-     <a href='https://m.me/ahtasamzidan' target='_blank'>📨 Messenger</a> | 
-     <a href='https://github.com/ahtasamzidan' target='_blank'>💻 GitHub</a> | 
-     <a href='https://www.linkedin.com/in/ahtasamzidan/' target='_blank'>🔗 LinkedIn</a>`,
+  "live chat":"🚀 Start a live chat with Zidan:<br>\
+    <a href='https://wa.me/8801741077216' target='_blank'><img src='https://img.icons8.com/color/48/000000/whatsapp--v1.png'> WhatsApp</a>\
+    <a href='https://m.me/ahtasamzidan' target='_blank'><img src='https://img.icons8.com/color/48/000000/facebook-messenger--v1.png'> Messenger</a>"
+};
+
   "social": "🌍 Social Media: GitHub, LinkedIn, WhatsApp, Messenger. Links available in Contact section.",
   "goals": "🎯 Goals: Expand web development services, build innovative e-commerce solutions, and explore AI-driven applications.",
   "freelance": "💻 Freelance: Web development, digital marketing, graphic design, and e-commerce setup.",
@@ -793,9 +797,95 @@ function botReply(text){
   if(liveChatKeywords.some(k=>lower.includes(k)) || lower.includes("live chat")){
     addMessage(knowledgeBase["live chat"],"bot"); return;
   }
-  if(["hi","hello","hey"].some(g=>lower.includes(g))){
-    addMessage("👋 Hi! I’m Zidan’s AI Assistant. Ask about skills, services, projects, or start a live chat!","bot"); return;
-  }
+// Expanded Q&A Responses
+if (["hi","hello","hey"].some(q => lower.includes(q))) {
+    addMessage("👋 Hi! I’m Zidan’s AI Assistant. Ask me about his skills, projects, education, or start a live chat!", "bot");
+    return;
+}
+
+if (["how are you","how’s it going","how r u"].some(q => lower.includes(q))) {
+    addMessage("😊 I'm doing great! I'm Zidan’s AI Assistant, here to help you learn about him.", "bot");
+    return;
+}
+
+if (["who are you","what’s your name","who is this"].some(q => lower.includes(q))) {
+    addMessage("🤖 I'm Zidan's AI Assistant. I can answer questions about Zidan’s skills, projects, education, and contact info.", "bot");
+    return;
+}
+
+if (["what can you do","what do you do","help me"].some(q => lower.includes(q))) {
+    addMessage("💡 I can tell you about Zidan’s skills, projects, services, hobbies, education, and even connect you via WhatsApp or Messenger!", "bot");
+    return;
+}
+
+if (["tell me about yourself","about you","who is zidan"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["about"], "bot");
+    return;
+}
+
+if (["skills","your skills","what skills do you have"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["skills"], "bot");
+    return;
+}
+
+if (["projects","show projects","portfolio"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["projects"], "bot");
+    return;
+}
+
+if (["education","study","degree"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["education"], "bot");
+    return;
+}
+
+if (["experience","work","job"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["experience"], "bot");
+    return;
+}
+
+if (["hobbies","interests","what do you like"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["hobbies"], "bot");
+    return;
+}
+
+if (["languages","spoken languages"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["languages"], "bot");
+    return;
+}
+
+if (["availability","freelance","hire"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["availability"], "bot");
+    return;
+}
+
+if (["contact","reach","how to contact","connect"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["contact"], "bot");
+    return;
+}
+
+if (["social","social media","links"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["social"], "bot");
+    return;
+}
+
+if (["goals","future","plans"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["goals"], "bot");
+    return;
+}
+
+if (["fun facts","fun","facts"].some(q => lower.includes(q))) {
+    addMessage(knowledgeBase["funfacts"], "bot");
+    return;
+}
+
+// Fallback for unknown questions
+let fallbackReplies = [
+    "🤔 Hmm, I’m not sure about that. You can ask me about Zidan’s skills, projects, education, or contact info!",
+    "✨ I might not know that yet, but feel free to ask me about Zidan’s skills, hobbies, or projects.",
+    "💡 Try asking about skills, services, projects, or how to reach Zidan!"
+];
+addMessage(fallbackReplies[Math.floor(Math.random()*fallbackReplies.length)], "bot");
+
   for(const key in knowledgeBase){
     if(lower.includes(key)){ addMessage(knowledgeBase[key],"bot"); return; }
   }
