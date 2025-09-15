@@ -878,14 +878,6 @@ if (["fun facts","fun","facts"].some(q => lower.includes(q))) {
     return;
 }
 
-// Fallback for unknown questions
-let fallbackReplies = [
-    "🤔 Hmm, I’m not sure about that. You can ask me about Zidan’s skills, projects, education, or contact info!",
-    "✨ I might not know that yet, but feel free to ask me about Zidan’s skills, hobbies, or projects.",
-    "💡 Try asking about skills, services, projects, or how to reach Zidan!"
-];
-addMessage(fallbackReplies[Math.floor(Math.random()*fallbackReplies.length)], "bot");
-
   for(const key in knowledgeBase){
     if(lower.includes(key)){ addMessage(knowledgeBase[key],"bot"); return; }
   }
