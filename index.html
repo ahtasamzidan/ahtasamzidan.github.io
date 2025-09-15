@@ -794,7 +794,6 @@ function botReply(text){
   if(liveChatKeywords.some(k=>lower.includes(k)) || lower.includes("live chat")){
     addMessage(knowledgeBase["live chat"],"bot"); return;
   }
-// Expanded Q&A Responses
 if (["hi","hello","hey"].some(q => lower.includes(q))) {
     addMessage("👋 Hi! I’m Zidan’s AI Assistant. Ask me about his skills, projects, education, or start a live chat!", "bot");
     return;
