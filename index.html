@@ -619,8 +619,9 @@ Hey there, I'm Ahtasam Zidan, a passionate web developer, digital marketer, and 
   <!-- Chat Popup -->
   <div class="chat-popup" id="chat-popup">
     <div class="chat-header">
-      <span>Zidan AI Assistant <img src="https://img.icons8.com/ios-filled/50/000000/robot.png" alt="Zidan AI" class="chat-logo" style="width:32px;height:32px;"> </span
-
+      <span>Zidan AI Assistant 
+        <img src="https://img.icons8.com/ios-filled/50/000000/robot.png" alt="Zidan AI" class="chat-logo" style="width:32px;height:32px;">
+      </span>
       <div id="typing-header" class="typing-dot-header" style="display:none;">
         <span></span><span></span><span></span>
       </div>
@@ -628,7 +629,7 @@ Hey there, I'm Ahtasam Zidan, a passionate web developer, digital marketer, and 
     </div>
 
     <div class="chat-body">
-      <p class="greeting">Hello! Ask me about Zidan’s skills, projects, services, or start a live chat 🚀</p>
+      <p class="greeting">Hello! Ask me about Zidan’s skills, projects, services, education, or start a live chat 🚀</p>
 
       <div class="suggested">
         <button onclick="sendQuickReply('Tell me about Zidan')">ℹ️ About</button>
@@ -722,16 +723,16 @@ Hey there, I'm Ahtasam Zidan, a passionate web developer, digital marketer, and 
 .chat-input button { background: linear-gradient(45deg,#25D366,#128C7E); color:#fff; border:none; padding:10px 14px; cursor:pointer; transition:0.2s; }
 .chat-input button:hover {transform: scale(1.05);}
 
-@keyframes fadeIn {from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);}}
+@keyframes fadeIn {from {opacity:0; transform:translateY(10px);} to {opacity:1; transform:translateY(0);} }
 @media(max-width:400px){#ai-chat .chat-popup{width:90%; bottom:60px;} .suggested button{flex:1 1 100%;}}
 </style>
 
 <script>
-// Knowledge Base – Fully Expanded Q&A
+// Knowledge Base
 const knowledgeBase = {
-  "about": "👨‍💻 Ahtasam Zidan is a Website Developer, Digital Marketer, and Graphics Designer. He has worked as Social Media Manager, Data Analyst, and built e-commerce sites like Kroytopia & Tiptechy.",
-  "skills": "⚡ Skills: HTML, CSS, JavaScript, WordPress, SEO, Data Analysis, Social Media Marketing, Graphic Design, UI/UX design, E-commerce management.",
-  "projects": "📂 Projects: Tiptechy.com (Tech Blog), Kroytopia (E-commerce), Teespiffy (Print-on-Demand T-shirt store), and multiple client websites.",
+  "about": "👨‍💻 Ahtasam Zidan is a Website Developer, Digital Marketer, and Graphics Designer. He has worked as Social Media Manager, Data Analyst, and handled multiple web projects.",
+  "skills": "⚡ Skills: HTML, CSS, JavaScript, WordPress, SEO, Data Analysis, Social Media Marketing, Graphic Design, UI/UX design.",
+  "projects": "📂 Projects: Multiple client websites, personal portfolio sites, and e-commerce setups.",
   "education": "🎓 Education: BSS in Political Science (Running).",
   "experience": "💼 Experience: Assistant Store Manager handling stock, delivery, reporting, invoicing, social media management, data analysis, and website development.",
   "hobbies": "🎨 Hobbies: Graphic design, tech blogging, exploring AI tools, digital marketing experiments, photography.",
@@ -739,31 +740,26 @@ const knowledgeBase = {
   "availability": "⏰ Availability: Open for freelance web development, digital marketing, and client projects.",
   "live chat":"🚀 Start a live chat with Zidan:<br>\
     <a href='https://wa.me/8801741077216' target='_blank'><img src='https://img.icons8.com/color/48/000000/whatsapp--v1.png'> WhatsApp</a>\
-    <a href='https://m.me/ahtasamzidan' target='_blank'><img src='https://img.icons8.com/color/48/000000/facebook-messenger--v1.png'> Messenger</a>"
+    <a href='https://m.me/ahtasamzidan' target='_blank'><img src='https://img.icons8.com/color/48/000000/facebook-messenger--v1.png'> Messenger</a>",
+  "social": "🌍 Social Media: GitHub, LinkedIn, WhatsApp, Messenger."
 };
-
-  "social": "🌍 Social Media: GitHub, LinkedIn, WhatsApp, Messenger. Links available in Contact section.",
-  "goals": "🎯 Goals: Expand web development services, build innovative e-commerce solutions, and explore AI-driven applications.",
-  "freelance": "💻 Freelance: Web development, digital marketing, graphic design, and e-commerce setup.",
-  "techstack": "🛠 Tech Stack: HTML, CSS, JavaScript, WordPress, Bootstrap, Elementor, SEO tools, Adobe Photoshop, Canva.",
-  "achievements": "🏆 Achievements: Successfully launched Tiptechy.com and Kroytopia e-commerce platform, managed multiple client projects, gained experience in social media growth and data analytics.",
-  "funfacts": "✨ Fun Facts: Loves experimenting with AI tools, enjoys tech gadgets, and designing creative graphics.",
-  "faq": "❓ FAQs: Ask me about Zidan’s skills, projects, education, availability, or how to contact him."
-};
-
 
 const liveChatKeywords=["agent","live chat","talk to you","help","human","support"];
 const aiFallbacks=["🤔 I didn’t get that. Ask about Zidan’s skills, services, or projects.","✨ Try asking about projects, services, or live chat.","💡 Or contact Zidan directly via WhatsApp or Messenger!"];
 const messageSound=new Audio("https://actions.google.com/sounds/v1/cartoon/soft_chime.ogg");
 
+// Toggle Chat
 function toggleChat(){
-  document.getElementById("chat-popup").style.display=(document.getElementById("chat-popup").style.display==="flex")?"none":"flex";
+  const popup=document.getElementById("chat-popup");
+  popup.style.display=(popup.style.display==="flex")?"none":"flex";
   document.getElementById("chat-help").style.display="none";
 }
 
+// Typing animation
 function showTyping(){document.getElementById("typing-header").style.display="flex";}
 function hideTyping(){document.getElementById("typing-header").style.display="none";}
 
+// Add message
 function addMessage(text,sender){
   const msg=document.createElement("div");
   msg.className="msg "+sender;
@@ -773,6 +769,7 @@ function addMessage(text,sender){
   messageSound.play();
 }
 
+// Send message
 function sendMessage(){
   const input=document.getElementById("userInput");
   const text=input.value.trim();
@@ -783,107 +780,53 @@ function sendMessage(){
   setTimeout(()=>{hideTyping(); botReply(text);},800);
 }
 
+// Quick reply
 function sendQuickReply(text){
   addMessage(text,"user");
   showTyping();
   setTimeout(()=>{hideTyping(); botReply(text);},800);
 }
 
+// Bot reply logic
 function botReply(text){
   const lower=text.toLowerCase();
+
+  // Live chat
   if(liveChatKeywords.some(k=>lower.includes(k)) || lower.includes("live chat")){
     addMessage(knowledgeBase["live chat"],"bot"); return;
   }
-if (["hi","hello","hey"].some(q => lower.includes(q))) {
-    addMessage("👋 Hi! I’m Zidan’s AI Assistant. Ask me about his skills, projects, education, or start a live chat!", "bot");
-    return;
-}
 
-if (["how are you","how’s it going","how r u"].some(q => lower.includes(q))) {
-    addMessage("😊 I'm doing great! I'm Zidan’s AI Assistant, here to help you learn about him.", "bot");
-    return;
-}
+  // Greetings
+  if(["hi","hello","hey"].some(q => lower.includes(q))){
+    addMessage("👋 Hi! I’m Zidan’s AI Assistant. Ask about his skills, projects, education, or start a live chat!", "bot"); return;
+  }
 
-if (["who are you","what’s your name","who is this"].some(q => lower.includes(q))) {
-    addMessage("🤖 I'm Zidan's AI Assistant. I can answer questions about Zidan’s skills, projects, education, and contact info.", "bot");
-    return;
-}
+  if(["how are you","how’s it going","how r u"].some(q => lower.includes(q))){
+    addMessage("😊 I'm doing great! I'm Zidan’s AI Assistant, here to help you learn about him.", "bot"); return;
+  }
 
-if (["what can you do","what do you do","help me"].some(q => lower.includes(q))) {
-    addMessage("💡 I can tell you about Zidan’s skills, projects, services, hobbies, education, and even connect you via WhatsApp or Messenger!", "bot");
-    return;
-}
+  if(["who are you","what’s your name","who is this"].some(q => lower.includes(q))){
+    addMessage("🤖 I'm Zidan's AI Assistant. I can answer questions about Zidan’s skills, projects, education, and contact info.", "bot"); return;
+  }
 
-if (["tell me about yourself","about you","who is zidan"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["about"], "bot");
-    return;
-}
+  if(["what can you do","what do you do","help me"].some(q => lower.includes(q))){
+    addMessage("💡 I can tell you about Zidan’s skills, projects, services, hobbies, education, and even connect you via WhatsApp or Messenger!", "bot"); return;
+  }
 
-if (["skills","your skills","what skills do you have"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["skills"], "bot");
-    return;
-}
-
-if (["projects","show projects","portfolio"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["projects"], "bot");
-    return;
-}
-
-if (["education","study","degree"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["education"], "bot");
-    return;
-}
-
-if (["experience","work","job"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["experience"], "bot");
-    return;
-}
-
-if (["hobbies","interests","what do you like"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["hobbies"], "bot");
-    return;
-}
-
-if (["languages","spoken languages"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["languages"], "bot");
-    return;
-}
-
-if (["availability","freelance","hire"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["availability"], "bot");
-    return;
-}
-
-if (["contact","reach","how to contact","connect"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["contact"], "bot");
-    return;
-}
-
-if (["social","social media","links"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["social"], "bot");
-    return;
-}
-
-if (["goals","future","plans"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["goals"], "bot");
-    return;
-}
-
-if (["fun facts","fun","facts"].some(q => lower.includes(q))) {
-    addMessage(knowledgeBase["funfacts"], "bot");
-    return;
-}
-
+  // Knowledge base
   for(const key in knowledgeBase){
     if(lower.includes(key)){ addMessage(knowledgeBase[key],"bot"); return; }
   }
+
+  // Fallback
   addMessage(aiFallbacks[Math.floor(Math.random()*aiFallbacks.length)],"bot");
 }
 
-// Show auto popup after page load
-window.onload = function(){
+// Auto show help popup
+window.onload=function(){
   setTimeout(()=>{document.getElementById("chat-help").style.display="flex";},2000);
 }
 </script>
+
 </div>
 </html>
