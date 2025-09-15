@@ -621,7 +621,7 @@
   <!-- Chat Popup -->
   <div class="chat-popup" id="chat-popup">
     <div class="chat-header">
-      <span>Ask Zidan AI 🤖</span>
+      <span>Zidan AI Assistant <i class="fas fa-robot"></i></span>
       <div id="typing-header" class="typing-dot-header" style="display:none;">
         <span></span><span></span><span></span>
       </div>
@@ -728,18 +728,30 @@
 </style>
 
 <script>
-// Knowledge Base
-const knowledgeBase={
-  "about":"👨‍💻 Ahtasam Zidan is a Website Developer, Digital Marketer, and Graphics Designer. Built Tiptechy & Kroytopia.",
-  "skills":"⚡ Skills: HTML, CSS, JavaScript, WordPress, SEO, Data Analysis, Social Media Marketing, Graphic Design, UI/UX Design.",
-  "projects":"📂 Projects: Tiptechy.com (Tech Blog), Kroytopia (E-commerce), multiple client websites, portfolio projects.",
-  "services":"💼 Services: Web Design, SEO, Digital Marketing, Branding, E-commerce Setup, Graphic Design, Consulting.",
-  "experience":"📝 Experience: 3+ years Web Development, 2+ years Digital Marketing, Managed multiple projects, handled reporting & analytics.",
-  "education":"🎓 Education: BSS POLITICAL SCIENCE (Running)",
-  "live chat":"🚀 Start a live chat with Zidan:<br>\
-    <a href='https://wa.me/8801741077216' target='_blank'><img src='https://img.icons8.com/color/48/000000/whatsapp--v1.png'> WhatsApp</a>\
-    <a href='https://m.me/ahtasamzidan' target='_blank'><img src='https://img.icons8.com/color/48/000000/facebook-messenger--v1.png'> Messenger</a>"
+// Knowledge Base – Fully Expanded Q&A
+const knowledgeBase = {
+  "about": "👨‍💻 Ahtasam Zidan is a Website Developer, Digital Marketer, and Graphics Designer. He has worked as Social Media Manager, Data Analyst, and built e-commerce sites like Kroytopia & Tiptechy.",
+  "skills": "⚡ Skills: HTML, CSS, JavaScript, WordPress, SEO, Data Analysis, Social Media Marketing, Graphic Design, UI/UX design, E-commerce management.",
+  "projects": "📂 Projects: Tiptechy.com (Tech Blog), Kroytopia (E-commerce), Teespiffy (Print-on-Demand T-shirt store), and multiple client websites.",
+  "education": "🎓 Education: BSS in Political Science (Running).",
+  "experience": "💼 Experience: Assistant Store Manager handling stock, delivery, reporting, invoicing, social media management, data analysis, and website development.",
+  "hobbies": "🎨 Hobbies: Graphic design, tech blogging, exploring AI tools, digital marketing experiments, photography.",
+  "languages": "🌐 Languages: English, Bangla, Malay (basic conversational).",
+  "availability": "⏰ Availability: Open for freelance web development, digital marketing, and client projects.",
+  "contact": `📞 Reach Zidan:<br>
+     <a href='https://wa.me/8801741077216' target='_blank'>💬 WhatsApp</a> | 
+     <a href='https://m.me/ahtasamzidan' target='_blank'>📨 Messenger</a> | 
+     <a href='https://github.com/ahtasamzidan' target='_blank'>💻 GitHub</a> | 
+     <a href='https://www.linkedin.com/in/ahtasamzidan/' target='_blank'>🔗 LinkedIn</a>`,
+  "social": "🌍 Social Media: GitHub, LinkedIn, WhatsApp, Messenger. Links available in Contact section.",
+  "goals": "🎯 Goals: Expand web development services, build innovative e-commerce solutions, and explore AI-driven applications.",
+  "freelance": "💻 Freelance: Web development, digital marketing, graphic design, and e-commerce setup.",
+  "techstack": "🛠 Tech Stack: HTML, CSS, JavaScript, WordPress, Bootstrap, Elementor, SEO tools, Adobe Photoshop, Canva.",
+  "achievements": "🏆 Achievements: Successfully launched Tiptechy.com and Kroytopia e-commerce platform, managed multiple client projects, gained experience in social media growth and data analytics.",
+  "funfacts": "✨ Fun Facts: Loves experimenting with AI tools, enjoys tech gadgets, and designing creative graphics.",
+  "faq": "❓ FAQs: Ask me about Zidan’s skills, projects, education, availability, or how to contact him."
 };
+
 
 const liveChatKeywords=["agent","live chat","talk to you","help","human","support"];
 const aiFallbacks=["🤔 I didn’t get that. Ask about Zidan’s skills, services, or projects.","✨ Try asking about projects, services, or live chat.","💡 Or contact Zidan directly via WhatsApp or Messenger!"];
